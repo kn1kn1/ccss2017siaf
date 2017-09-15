@@ -25,13 +25,13 @@
 
       window.addEventListener("load", () => {
         if (document.location.search.length < 1) {
-          alert("URLの末尾にマークダウンファイルのPATHを指定してください。例 : 「?slide=20170827/example.md」")
+          alert("URLの末尾にマークダウンファイルのPATHを指定してください。例 : 「?slide=slide/01-sonicpi.md」")
           return
         }
         const parameters = getRequestParameters();
         const markdownUrl = parameters["slide"];
         if (!markdownUrl) {
-          alert("URLの末尾にマークダウンファイルのPATHを指定してください。例 : 「?slide=20170827/example.md」")
+          alert("URLの末尾にマークダウンファイルのPATHを指定してください。例 : 「?slide=slide/01-sonicpi.md」")
           return
         }
 
@@ -85,6 +85,21 @@
       .reveal h5,
       .reveal h6 {
         text-transform: none;
+      }
+      .reveal ol,
+      .reveal dl,
+      .reveal ul {
+        font-size: 0.75em;
+        display: block;
+        text-align: left;
+      }
+      .reveal section img {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+      .reveal code {
+        font-family: monospace;
       }
     </style>
   </head>
